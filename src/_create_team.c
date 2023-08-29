@@ -136,11 +136,11 @@ void GenerateTeam(void)
     u8 i;
     const struct Pkmn **team;
     u16 **movesets;
-    team = CreateTeam();
-    ZeroPlayerPartyMons();
     movesets = (u16**)malloc(6 * sizeof(u16*));
+    team = (const struct Pkmn**)malloc(6 * sizeof(struct Pkmn*));
     for (i = 0; i < 6; i++)
     {
+        team[i] = &Pokemon_List[VarGet(VAR_0x408C)/10];
         movesets[i] = GenerateMoveset(team[i]);
         CreateMonWithNature(&gPlayerParty[i], team[i]->species, 55, USE_RANDOM_IVS, Random() % NUM_NATURES);
         if (team[i]->species == SPECIES_DITTO)

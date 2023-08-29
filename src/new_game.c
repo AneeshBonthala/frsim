@@ -79,9 +79,9 @@ static void ClearBattleTower(void)
     CpuFill32(0, &gSaveBlock2Ptr->battleTower, sizeof(gSaveBlock2Ptr->battleTower));
 }
 
-static void WarpToPlayersRoom(void)
+void WarpToPlayersRoom(void)
 {
-    SetWarpDestination(MAP_GROUP(INDIGO_PLATEAU_EXTERIOR), MAP_NUM(INDIGO_PLATEAU_EXTERIOR), -1, 11, 7);
+    SetWarpDestination(MAP_GROUP(POKEMON_LEAGUE_LORELEIS_ROOM), MAP_NUM(POKEMON_LEAGUE_LORELEIS_ROOM), -1, 6, 12);
     WarpIntoMap();
 }
 

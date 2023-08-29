@@ -937,10 +937,10 @@ static void CB2_EndTrainerBattle(void)
         {
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         }
-        else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
-        {
-            SetMainCallback2(CB2_WhiteOut);
-        }
+        // else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        // {
+        //     SetMainCallback2(CB2_WhiteOut);
+        // }
         else
         {
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);

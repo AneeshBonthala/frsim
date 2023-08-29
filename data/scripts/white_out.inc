@@ -63,6 +63,6 @@ EventScript_FieldWhiteOutFade::
 	special Script_FadeOutMapMusic
 	waitstate
 	fadescreen FADE_TO_BLACK
-	special SetCB2WhiteOut
+	callnative WarpToPlayersRoom
 	waitstate
 	end

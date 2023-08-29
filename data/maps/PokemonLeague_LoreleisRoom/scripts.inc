@@ -7,7 +7,7 @@ PokemonLeague_LoreleisRoom_MapScripts::
 	.byte 0
 
 PokemonLeague_LoreleisRoom_OnResume::
-	setvar VAR_0x8004, 0
+	callnative GenerateTeam
 	call PokemonLeague_EventScript_DoLightingEffect
 	end
 
@@ -66,7 +66,6 @@ PokemonLeague_LoreleisRoom_EventScript_Lorelei::
 
 PokemonLeague_LoreleisRoom_EventScript_Intro::
 	msgbox PokemonLeague_LoreleisRoom_Text_Intro
-	clearflag FLAG_0x0AF
 	return
 
 PokemonLeague_LoreleisRoom_EventScript_RematchIntro::
@@ -74,6 +73,7 @@ PokemonLeague_LoreleisRoom_EventScript_RematchIntro::
 	return
 
 PokemonLeague_LoreleisRoom_EventScript_Battle::
+	addvar VAR_0x408C, 1
 	trainerbattle_no_intro TRAINER_ELITE_FOUR_LORELEI, PokemonLeague_LoreleisRoom_Text_Defeat
 	return
 
@@ -87,8 +87,5 @@ PokemonLeague_LoreleisRoom_EventScript_PostBattle::
 	end
 
 PokemonLeague_LoreleisRoom_EventScript_DefeatedLorelei::
-	setflag FLAG_DEFEATED_LORELEI
-	call PokemonLeague_EventScript_OpenDoor
-	msgbox PokemonLeague_LoreleisRoom_Text_PostBattle
-	release
+	callnative WarpToPlayersRoom
 	end

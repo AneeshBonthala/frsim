@@ -14,6 +14,7 @@
 #include "event_scripts.h"
 #include "constants/heal_locations.h"
 #include "constants/maps.h"
+#include "new_game.h"
 
 static const u16 sFlashLevelToRadius[] = { 200, 72, 56, 40, 24 };
 const s32 gMaxFlashLevel = ARRAY_COUNT(sFlashLevelToRadius) - 1;

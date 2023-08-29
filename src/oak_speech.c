@@ -705,6 +705,7 @@ void StartNewGameScene(void)
         dest[i] = EOS;
     
     VarSet(VAR_0x4029, 0);
+    VarSet(VAR_0x408C, 0);
     SetMainCallback2(CB2_NewGame);
 }
 
